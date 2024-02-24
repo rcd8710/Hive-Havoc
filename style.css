@@ -1,0 +1,66 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-color: #981818;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 20vh;
+    display: flex; /* Use flexbox to arrange children in a row */
+    align-self: start;
+    justify-content: space-around; /* Add space around items */
+    
+}
+
+footer {
+    height: 18vh;
+    margin-top: auto;
+    display: flex; /* Use flexbox to arrange children in a row */
+    align-self: start;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.comb img {
+    height: 20vh;
+    width: 20vw;
+   
+}
+
+
+
+#combend {
+    width: 100%;
+    margin-top: -20px;
+    display: flex;
+    justify-content: flex-end; /* Align to the end */
+    align-items: flex-end;
+}
+
+.bcomb img{
+    height: 20vh;
+    width: 20vw;
+}
+
+
+#footertop{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15vh;
+    
+}
+
+#footertop img{
+    
+    width: 100%;
+    
+}
