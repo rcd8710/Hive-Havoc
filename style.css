@@ -11,7 +11,7 @@ body{
 }
 
 header {
-    height: 20vh;
+    height: 20%;
     display: flex; /* Use flexbox to arrange children in a row */
     align-self: start;
     justify-content: space-around; /* Add space around items */
@@ -33,6 +33,20 @@ footer {
    
 }
 
+#Gamestart{
+    border: white;
+    border-style: solid;
+    margin: auto;
+    padding: 30px;
+    background-color: rgb(150, 149, 149);
+}
+
+.share-tech-regular {
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-size: 5vh;
+    color: white;
+  }
 
 
 #combend {
@@ -50,6 +64,7 @@ footer {
 }
 
 #bee {
+    width: 100%;
     display: flex;
     justify-content: end;
     align-items: center;

@@ -10,66 +10,25 @@ body {
     flex-direction: column;
     margin: 0;
 }
+#bee img{
+    width: 10vw;
+    height: 12vh;
+   
+    
+}
 
-header {
-    height: 20vh;
+#bee {
+    margin: auto;
+    width: 100%;
     display: flex;
+    justify-content: end;
     align-items: center;
-    justify-content: space-around;
-}
-
-main {
-    flex-grow: 1;
-    position: relative; /* Set relative positioning for main content */
-}
-
-footer {
-    height: 18vh;
-    margin-top: auto;
-    display: flex;
-    align-self: start;
-    justify-content: space-around;
-    width: 100%;
-    padding: 10px;
-    position: relative; /* Set relative positioning for footer */
+    
     
 }
 
 
-
-img {
-    height: 35vh;
-    width: 20vw;
-}
-
-#footer1 {
-    
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-}
-
-#footer1 img{
-    height: 35vh;
-    width: 20;
-    background: linear-gradient(75.7deg, rgb(34, 126, 34) 3.8%, rgb(99, 162, 17) 87.1%); 
-
-}
-
-#footer2 {
-    height: 25vh;
+footer{
     margin-top: auto;
     display: flex;
-    align-self: start;
-    justify-content: space-around;
-    width: 100%;
-    padding: 10px;
-    position: relative; /* Set relative positioning for footer */
-}
-
-#footer2 img{
-    min-height: 500px;
-    width: 20;
 }
