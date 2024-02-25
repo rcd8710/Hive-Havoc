@@ -43,6 +43,28 @@ body {
   
 }
 
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#progressbar{
+    border-style: solid;
+    
+    border-radius: 20px;
+    height: 20px;
+    width: 250px;
+    margin: 20px;
+}
+
+#pfill {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(255, 168, 168) 10%, rgb(252, 255, 0) 100%);
+    border-radius: 20px;
+    transition: width 7.5s linear;
+}
+
 #flower {
     position: absolute;
     left: 50%;
