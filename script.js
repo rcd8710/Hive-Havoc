@@ -1,5 +1,6 @@
 const myBee = document.getElementById("bee");
 const pollen = document.getElementById("pollen");
+const game = document.getElementById("Gamestart");
 const moveAmount = 10;
 let x = 0;
 let y = 0;
@@ -11,12 +12,13 @@ function getDistanceToLeft(element) {
 }
 
 
+
 document.addEventListener("keydown", event => {
     if (event.key === " ") {
         event.preventDefault();
         spacePressed = true;
-        const gamestart = document.getElementById("Gamestart");
-        gamestart.style.visibility = "hidden";
+         
+        game.textContent = "Welcome to Hive Havoc! The queen bee has sent you on an urgent mission!\nPress the arrow keys to move."
     }
 });
 
