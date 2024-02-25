@@ -1,35 +1,45 @@
 const myBee = document.getElementById("bee");
-const pollen = document.getElementById("pollen");
 const progressBarFill = document.getElementById("pfill");
+const pop1 = document.getElementById("b1");
+const pop2 = document.getElementById("b2");
+const pop3 = document.getElementById("b3");
 const moveAmount = 10;
 let x = 0;
 let y = 0;
+let counter = getCounterValue();
 
-function getDistanceToLeft(element) {
-    const elementRect = element.getBoundingClientRect();
-    const distanceToLeft = elementRect.left;
-    return distanceToLeft;
+function getCounterValue() {
+    return parseInt(localStorage.getItem('counter')) || 0;
 }
 
-function checkPoll1(posx,posy){
-    if(posx == -660 && posy == 0) 
-        return true;
+function setCounterValue(value) {
+    localStorage.setItem('counter', value);
 }
-    
 
-function checkHive(posx,posy) {
-    if(posx == -1280 && posy == -150) 
-        return true;
+function checkPoll1(posx, posy) {
+    return posx == -660 && posy == 0;
 }
-   
 
+function checkHive(posx, posy) {
+    return posx == -1280 && posy == -150;
+}
 
+function goToGameScreen() {
+    window.location.href = "Gamescreen.html";
+}
 
+function showProgressBar() {
+    progressBarFill.style.width = '100%';
+}
+
+function goToPop(url) {
+    window.location.href = url;
+}
 
 document.addEventListener("keydown", event => {
-    if(event.key.startsWith("Arrow")) {
+    if (event.key.startsWith("Arrow")) {
         event.preventDefault();
-        switch(event.key) {
+        switch (event.key) {
             case "ArrowUp":
                 y -= moveAmount;
                 break;
@@ -38,8 +48,8 @@ document.addEventListener("keydown", event => {
                 break;
             case "ArrowLeft":
                 x -= moveAmount;
-                if(x <= window.innerWidth * -1) {
-                    window.location.href = "Gamescreen.html";
+                if (x <= window.innerWidth * -1) {
+                    goToGameScreen();
                 }
                 break;
             case "ArrowRight":
@@ -47,29 +57,40 @@ document.addEventListener("keydown", event => {
                 break;
         }
         myBee.style.transform = `translate(${x}px, ${y}px)`;
-        if(checkPoll1(x,y)) {
-           showProgressBar();
+        if (checkPoll1(x, y)) {
+            showProgressBar();
         }
-        
+        if (checkHive(x, y) && counter === 0) {
+            counter++;
+            setCounterValue(counter);
+            goToPop("popups.html");
+        } else if (checkHive(x, y) && counter === 1) {
+            counter++;
+            setCounterValue(counter);
+            goToPop("popups2.html");
+        } else if (checkHive(x, y) && counter === 2) {
+            counter++;
+            setCounterValue(counter);
+            goToPop("popups3.html");
+            
+        }
+        else if (checkHive(x, y) && counter === 3){
+            counter++;
+            setCounterValue(counter);
+            goToPop("popups4.html");
+            goToGameScreen();
+        }
+        else{
+            
+            localStorage.setItem('counter', 0);
+        }
     }
 });
 
-function showProgressBar() {
-    // Set the width to 100% to trigger the transition
-    progressBarFill.style.width = '100%';// Adjust the delay as needed
-}
-
-fun
-
-
 const gamestart = document.getElementById("Gamestart");
 document.addEventListener("keydown", event => {
-    if(event.key === " ") {
+    if (event.key === " ") {
         event.preventDefault();
         gamestart.style.visibility = "hidden";
     }
 });
-
-
-
-

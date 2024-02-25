@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0ec9de;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+#popup1 {
+    position: relative;
+    margin: auto;
+    box-shadow: 100px -100px teal;
+    
+}
+
+#popup1 img {
+    box-shadow: -100px 100px rgb(127, 10, 10);
+    z-index: -1;
+    
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 300px;
+    transform: translate(-50%, -50%);
+    text-align: start;
+    color: rgb(1, 1, 1);
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+    z-index: 1; /* Ensure the text is on top of the image */
+    border-color: gray;
+    border-style: solid;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(109.6deg, rgb(245, 239, 249) 30.1%, rgb(207, 211, 236) 100.2%);
+}
+
+
+#popup2 {
+    position: relative;
+    margin: auto;
+    box-shadow: 100px -100px rgb(255, 249, 69);
+    
+}
+
+#popup2 img {
+    box-shadow: -100px 100px rgb(128, 255, 70);
+    z-index: -1;
+    
+}
+
+
+#popup3 {
+    position: relative;
+    margin: auto;
+    box-shadow: 100px -100px rgb(78, 0, 0);
+    
+}
+
+#popup3 img {
+    box-shadow: -100px 100px rgb(108, 1, 116);
+    z-index: -1;
+    
+}
+
+
+
+
+
+p{
+    padding: 10px;
+}
