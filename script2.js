@@ -62,6 +62,7 @@ document.addEventListener("keydown", event => {
             case "ArrowLeft":
                 x -= moveAmount;
                 if (x <= window.innerWidth * -1) {
+                    setCounterValue(0);
                     goToGameScreen();
                 }
                 break;
@@ -74,35 +75,27 @@ document.addEventListener("keydown", event => {
             showProgressBar();
             pollen.style.visibility = "hidden";
         }
-        if (checkHive(x, y) && counter === 0) {
-            counter++;
+        if (checkHive(x,y)) {
+        if (counter === 0) {
             
-            setCounterValue(counter);
+            setCounterValue(1);
            
             goToPop("popups.html");
-        } else if (checkHive(x, y) && counter === 1) {
+        } else if (counter === 1) {
             counter++;
-            setCounterValue(counter);
+            setCounterValue(2);
             
             goToPop("popups2.html");
-        } else if (checkHive(x, y) && counter === 2) {
-            counter++;
-            setCounterValue(counter);
+        } else if (counter === 2) {
+            
+            setCounterValue(0);
             
             goToPop("popups3.html");
             
         }
-        else if (checkHive(x, y) && counter === 3){
-            counter++;
-            setCounterValue(counter);
-            goToPop("popups4.html");
-            goToGameScreen();
-        }
-        else{
-            
-            localStorage.setItem('counter', 0);
-        }
+        
     }
+}
 });
 
 const gamestart = document.getElementById("Gamestart");
